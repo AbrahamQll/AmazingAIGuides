@@ -1,4 +1,4 @@
-***UBUNTU:
+**UBUNTU:**
 
 For a more colorful and feature-rich shell on Ubuntu, you can switch to **Zsh** with the **Oh My Zsh** framework. Zsh provides intelligent autocompletion, history suggestions, syntax highlighting, and plugins for various tools and environments. Here's a step-by-step guide:
 
@@ -96,7 +96,7 @@ With Zsh, Oh My Zsh, and plugins like syntax highlighting and autosuggestions, y
 
 
 
-***FEDORA:
+**FEDORA:**
 
 
 
