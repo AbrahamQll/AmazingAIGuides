@@ -94,6 +94,12 @@ With Zsh, Oh My Zsh, and plugins like syntax highlighting and autosuggestions, y
 
 
 
+---
+---
+---
+---
+---
+---
 
 
 **FEDORA:**
