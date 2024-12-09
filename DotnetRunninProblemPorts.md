@@ -4,8 +4,10 @@ HNS
 
 and Application guard
 
-remove all teh ports with this script in powershell ps1:"
+remove all teh ports with this script in powershell ps1:
 
+
+```
 # PowerShell script to remove all reserved port ranges for TCP protocol
 
 # Run the command to get excluded port ranges
@@ -32,7 +34,7 @@ foreach ($line in $lines) {
 }
 
 Write-Host "All reserved port ranges have been processed."
-
+```
 
 
 
