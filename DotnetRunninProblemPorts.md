@@ -1,10 +1,12 @@
-stop the services windows firewall
+stop the services
 
-HNS
+*windows firewall
 
-and Application guard
+*HNS
 
-remove all teh ports with this script in powershell ps1:
+*Application guard
+
+remove all the ports with this script in powershell ps1:
 
 
 ```
