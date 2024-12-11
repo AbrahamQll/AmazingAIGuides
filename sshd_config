@@ -1,0 +1,77 @@
+#       $OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
+
+# This is the sshd server system-wide configuration file. See
+# sshd_config(5) for more information.
+
+# Change port to a non-default value to reduce exposure to automated scans
+Port 34678
+
+# Limit to IPv4 only for simplicity and reduced attack surface
+AddressFamily inet
+
+# Listen on all available interfaces (optional: restrict to specific IPs)
+ListenAddress 0.0.0.0
+
+# Specify host keys
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+# Ciphers and keying
+Ciphers chacha20-poly1305@openssh.com,aes256-ctr,aes256-gcm@openssh.com
+KexAlgorithms curve25519-sha256@libssh.org
+MACs hmac-sha2-512,hmac-sha2-256
+
+# Logging
+SyslogFacility AUTH
+#LogLevel VERBOSE
+
+# Authentication
+LoginGraceTime 30s
+PermitRootLogin no
+StrictModes yes
+MaxAuthTries 3
+MaxSessions 2
+
+PubkeyAuthentication yes
+PasswordAuthentication yes
+AuthenticationMethods password,publickey
+AuthorizedKeysFile .ssh/authorized_keys
+
+# Disable outdated methods and features
+IgnoreRhosts yes
+PermitEmptyPasswords no
+KbdInteractiveAuthentication no
+
+# PAM for enhanced account management
+UsePAM yes
+
+# Restrict forwarding
+AllowAgentForwarding no
+AllowTcpForwarding yes
+GatewayPorts yes
+X11Forwarding no
+PermitTTY yes
+TCPKeepAlive yes
+
+# Idle session management
+ClientAliveInterval 300
+ClientAliveCountMax 0
+
+# Miscellaneous hardening
+PrintMotd no
+PrintLastLog yes
+UseDNS no
+ChrootDirectory none
+VersionAddendum none
+Banner /etc/issue.net
+ChrootDirectory /home/%u
+AllowUsers x0_lmomf89c6rfw0khm7ou x542xwb7_pkxbpjcps96kq
+
+# Subsystem
+Subsystem sftp /usr/libexec/openssh/sftp-server
+
+# Example of per-user restrictions
+#Match User anoncvs
+#       X11Forwarding no
+#       AllowTcpForwarding no
+#       ForceCommand cvs server
